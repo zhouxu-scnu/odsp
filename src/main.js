@@ -5,6 +5,11 @@ import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import './assets/css/sprite.css'		//加载雪碧图
 import SpriteContainer from './components/SpriteContainer.vue'		//加载自定义的缩放雪碧图的组件
+import {customXhr} from '../customJs.js'
+
+//将get_t和post_t方法添加到Vue的原型中，在Vue实例中可通过this.$get_t（this.$post_t）调用
+Vue.prototype.$get_t = customXhr.get_t;
+Vue.prototype.$post_t = customXhr.post_t;
 
 Vue.component('SpriteContainer', SpriteContainer);			//将SpriteContainer注册为全局组件
 

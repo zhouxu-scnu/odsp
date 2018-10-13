@@ -8,9 +8,6 @@
 	</div>
 </template>
 <script type="text/javascript">
-	import {ServerHost} from '../../projectConfig.js';
-	// import $ from 'jquery';
-	import {customXhr as $} from '../../customJs.js';
 	export default {
 		data(){
 			return {
@@ -19,7 +16,7 @@
 		},
 		created(){
 			const _this = this;
-			$.get_t(ServerHost + 'dataset', function(data, status){
+			this.$get_t('dataset', function(data, status){
 				_this.datasets = data.data;
 			})
 		}

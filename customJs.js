@@ -1,5 +1,5 @@
-import $ from 'jquery';
-//将token附加在http请求头中，并封装起来供外部调用，此处基于原生js和jQuery封装仅供示例，后续会换成基于axios封装
+import {ServerHost} from './projectConfig.js';
+//将token附加在http请求头中，并封装起来供外部调用，此处基于原生js封装仅供示例，后续会换成基于axios封装
 const customXhr = (function(){	
 	return {
 		get_t: function(url,cb){
@@ -14,7 +14,7 @@ const customXhr = (function(){
 					}
 				}
 			}
-			xhr.open("get",url, true);
+			xhr.open("get", ServerHost + url, true);
 			xhr.setRequestHeader("Authorization", token);
 			xhr.send(null);
 		},
@@ -30,13 +30,10 @@ const customXhr = (function(){
 					}
 				}
 			}
-			xhr.open("post",url,true);
+			xhr.open("post", ServerHost + url, true);
 			xhr.setRequestHeader("Authorization", token);
 			xhr.send(data);
-		},
-		get: $.get,
-		post: $.post,
-		ajax: $.ajax
+		}
 	}
 })();
 

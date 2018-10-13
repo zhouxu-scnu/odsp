@@ -10,7 +10,6 @@
 	</div>
 </template>
 <script type="text/javascript">
-	import {ServerHost} from '../../projectConfig.js';
 	import LeftNavMenu from '@/components/LeftNavMenu.vue';
 	export default {
 		data(){

@@ -24,7 +24,6 @@
 	</div>
 </template>
 <script type="text/javascript">
-	import SpriteContainer from '@/components/SpriteContainer.vue';
 	export default {
 		props: {
 			width: {
@@ -40,9 +39,6 @@
 			return {
 				menus: []
 			}
-		},
-		components: {
-			SpriteContainer
 		},
 		watch: {
 			role(currentRole){
